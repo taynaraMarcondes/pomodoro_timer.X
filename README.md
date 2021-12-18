@@ -16,8 +16,13 @@ Ele é constituído de 4 ciclos onde cada parte possui um tempo de 25 minutos de
 pomodoro_timer.X\dist\default\production\pomodoro_timer.X.production.hex
 
 - Comandos
+
 'U' - aumenta o tempo do timer em 1 segundo
+
 'D' - diminui o tempo do timer em 1 segundo
+
 'S' - Começa o timer
+
 's' - pula para o próximo timer (que pode ser de estudo ou pausa, dependendo da parte do ciclo que está)
+
 'L' - altera a meta de tempo de estudo
