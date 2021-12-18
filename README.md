@@ -8,7 +8,7 @@ Ele é constituído de 4 ciclos onde cada parte possui um tempo de 25 minutos de
 - Intruções
 
 1. clone os arquivos numa pasta:
- `git clone xxx`
+ `git clone https://github.com/taynaraMarcondes/pomodoro_timer.X.git`
 2. Abra o software MPLAB X IDE (a versão que utilizei é v5.45)
 3. Abra o software PicsimLab
 4. No MPLAB abra o projeto que foi clonado no passo 1 e compile o projeto (comando F11)
