@@ -2,7 +2,7 @@ O seguinte projeto tem como finalidade simular um timer Pomodoro.
 
 *Sobre o timer*
 
-Ele é constituído de 4 ciclos onde cada parte possui um tempo de 25 minutos de foco e um tempo de 5 minutos de pausa. No último ciclo a pausa é de 30 minutos.
+Ele é constituído de 4 ciclos onde cada parte possui um tempo de 25 minutos de foco e um tempo de 5 minutos de pausa. No último ciclo a pausa é de 25 minutos.
 
 *Sobre o projeto*
 - Intruções
