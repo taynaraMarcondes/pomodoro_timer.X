@@ -40,22 +40,6 @@
  int adcRead(unsigned int channel);
 # 4 "main.c" 2
 
-# 1 "./timer.h" 1
-# 23 "./timer.h"
- char timerEnded(void);
- void timerWait(void);
-
- void timerReset(unsigned int tempo);
- void timerInit(void);
-# 5 "main.c" 2
-
-# 1 "./serial.h" 1
-# 23 "./serial.h"
- void serialSend(unsigned char c);
- unsigned char serialRead(void);
- void serialInit(void);
-# 6 "main.c" 2
-
 # 1 "./led.h" 1
 
 
@@ -63,14 +47,14 @@
 void ConfiguraLed(void);
 void LigarLed(char num);
 void DesligarLed(char num);
-# 7 "main.c" 2
+# 5 "main.c" 2
 
 # 1 "./atraso.h" 1
 
 
 
 void atraso_ms(unsigned int num);
-# 8 "main.c" 2
+# 6 "main.c" 2
 
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\proc\\pic18f4520.h" 1 3
 # 44 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\\pic\\include\\proc\\pic18f4520.h" 3
@@ -4420,7 +4404,7 @@ extern volatile __bit nWR __attribute__((address(0x7C21)));
 
 
 extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
-# 9 "main.c" 2
+# 7 "main.c" 2
 
 
 
@@ -4430,7 +4414,7 @@ extern volatile __bit nWRITE __attribute__((address(0x7E3A)));
 unsigned int oldValue;
 unsigned char tecla;
 char enable = 0;
-long int studyTime = 18000, breakTime = 18000, bigBreak = 108000, time = 0, reset = 1;
+long int studyTime = 54000, breakTime = 18000, bigBreak = 108000, time = 0, reset = 1;
 long int totalStudied = 0, totalBreak = 0, studyGoal = 0, oldStudyGoal = 0;
 
 void instructions();
@@ -4491,11 +4475,11 @@ void operate(unsigned char op) {
             }
             reset++;
             verifyGoal();
-
-
-
-
-
+            lcdCommand(0x01);
+            lcdString("Tempo de estudo:");
+            lcdCommand(0xC0);
+            lcdNumber(totalStudied / 3600);
+            lcdString(" minutos");
             break;
 
         case 'L':
@@ -4544,9 +4528,7 @@ void verifyGoal() {
     if (studyGoal != 0) {
         int test = (totalStudied * 100) / (studyGoal * 3600);
         int j = 0;
-        lcdCommand(0x01);
-        lcdString("test: ");
-        lcdNumber(test);
+
         if (test > 87) {
             j = 8;
         } else if (test >= 75) {
@@ -4554,8 +4536,6 @@ void verifyGoal() {
         } else if (test >= 62) {
             j = 6;
         } else if (test >= 50) {
-            lcdCommand(0xC0);
-            lcdString("aqui: ");
             j = 5;
         } else if (test >= 37) {
             j = 4;
@@ -4568,7 +4548,6 @@ void verifyGoal() {
         }
 
         for (int i = 0; i < j; i++) {
-            lcdChar("A");
             LigarLed(i);
         }
     }
@@ -4581,17 +4560,13 @@ void main(void) {
     lcdInit();
     kpInit();
     ssdInit();
-
     ConfiguraLed();
     adcInit();
 
 
 
 
-
     for (;;) {
-
-
         switch (slot) {
             case 0:
                 LeTeclado();
@@ -4620,7 +4595,6 @@ void main(void) {
         ssdDigit((time / 600) % 6, 2);
         ssdDigit((time / 60) % 10, 3);
         ssdUpdate();
-
     }
 }
 

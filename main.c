@@ -2,8 +2,6 @@
 #include "lcd.h"
 #include "ssd.h"
 #include "adc.h"
-#include "timer.h"
-#include "serial.h"
 #include "led.h"
 #include "atraso.h"
 #include <pic18f4520.h>
@@ -15,7 +13,7 @@
 unsigned int oldValue;
 unsigned char tecla;
 char enable = 0;
-long int studyTime = 18000, breakTime = 18000, bigBreak = 108000, time = 0, reset = 1;
+long int studyTime = 54000, breakTime = 18000, bigBreak = 108000, time = 0, reset = 1;
 long int totalStudied = 0, totalBreak = 0, studyGoal = 0, oldStudyGoal = 0;
 
 void instructions();
@@ -76,11 +74,11 @@ void operate(unsigned char op) {
             }
             reset++;
             verifyGoal();
-            /*lcdCommand(L_CLR);
+            lcdCommand(L_CLR);
             lcdString("Tempo de estudo:");
             lcdCommand(L_L2);
             lcdNumber(totalStudied / 3600);
-            lcdString(" minutos");*/
+            lcdString(" minutos");
             break;
 
         case 'L':
@@ -129,9 +127,7 @@ void verifyGoal() {
     if (studyGoal != 0) {
         int test = (totalStudied * 100) / (studyGoal * 3600);
         int j = 0;
-        lcdCommand(L_CLR);
-        lcdString("test: ");
-        lcdNumber(test);
+       
         if (test > 87) {
             j = 8;
         } else if (test >= 75) {
@@ -139,8 +135,6 @@ void verifyGoal() {
         } else if (test >= 62) {
             j = 6;
         } else if (test >= 50) {
-            lcdCommand(L_L2);
-            lcdString("aqui: ");
             j = 5;
         } else if (test >= 37) {
             j = 4;
@@ -153,7 +147,6 @@ void verifyGoal() {
         }
 
         for (int i = 0; i < j; i++) {
-            lcdChar("A");
             LigarLed(i);
         }
     }
@@ -166,17 +159,13 @@ void main(void) {
     lcdInit();
     kpInit();
     ssdInit();
-    //serialInit();
     ConfiguraLed();
     adcInit();
-    //timerInit();
 
     //instructions();
 
     // inicializações
     for (;;) {
-        //timerReset(5000);
-
         switch (slot) {
             case 0:
                 LeTeclado();
@@ -205,7 +194,6 @@ void main(void) {
         ssdDigit((time / 600) % 6, 2);
         ssdDigit((time / 60) % 10, 3);
         ssdUpdate();
-        //timerWait();
     }
 }
 

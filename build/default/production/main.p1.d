@@ -4,7 +4,5 @@ keypad.h  \
 lcd.h  \
 ssd.h  \
 adc.h  \
-timer.h  \
-serial.h  \
 led.h  \
 atraso.h 

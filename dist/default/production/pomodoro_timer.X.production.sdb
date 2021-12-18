@@ -296,15 +296,15 @@ PIN_E7 39
 [v _LigarLed LigarLed `(v  1 e 1 0 ]
 "19
 [v _DesligarLed DesligarLed `(v  1 e 1 0 ]
-"24 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\main.c
+"22 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\main.c
 [v _operate operate `(v  1 e 1 0 ]
-"97
+"95
 [v _LeTeclado LeTeclado `(v  1 e 1 0 ]
-"113
+"111
 [v _SetaMeta SetaMeta `(v  1 e 1 0 ]
-"128
+"126
 [v _verifyGoal verifyGoal `(v  1 e 1 0 ]
-"163
+"156
 [v _main main `(v  1 e 1 0 ]
 "3 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\so.c
 [v _soInit soInit `(v  1 e 1 0 ]
@@ -380,19 +380,19 @@ PIN_E7 39
 [v _charKey charKey `C[10]uc  1 s 10 charKey ]
 "5 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\led.c
 [v _led led `[8]uc  1 e 8 0 ]
-"15 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\main.c
+"13 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\main.c
 [v _oldValue oldValue `ui  1 e 2 0 ]
-"16
+"14
 [v _tecla tecla `uc  1 e 1 0 ]
-"17
+"15
 [v _enable enable `uc  1 e 1 0 ]
-"18
+"16
 [v _studyTime studyTime `l  1 e 4 0 ]
 [v _breakTime breakTime `l  1 e 4 0 ]
 [v _bigBreak bigBreak `l  1 e 4 0 ]
 [v _time time `l  1 e 4 0 ]
 [v _reset reset `l  1 e 4 0 ]
-"19
+"17
 [v _totalStudied totalStudied `l  1 e 4 0 ]
 [v _totalBreak totalBreak `l  1 e 4 0 ]
 [v _studyGoal studyGoal `l  1 e 4 0 ]
@@ -406,12 +406,12 @@ PIN_E7 39
 [v _v1 v1 `uc  1 s 1 v1 ]
 [v _v2 v2 `uc  1 s 1 v2 ]
 [v _v3 v3 `uc  1 s 1 v3 ]
-"163 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\main.c
+"156 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"164
+"157
 [v main@slot slot `uc  1 a 1 61 ]
-"210
+"198
 } 0
 "94 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\ssd.c
 [v _ssdInit ssdInit `(v  1 e 1 0 ]
@@ -473,12 +473,12 @@ PIN_E7 39
 [v pinMode@type type `i  1 p 2 2 ]
 "73
 } 0
-"113 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\main.c
+"111 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\main.c
 [v _SetaMeta SetaMeta `(v  1 e 1 0 ]
 {
-"122
-[v SetaMeta@i i `i  1 a 2 20 ]
-"126
+"120
+[v SetaMeta@i i `i  1 a 2 30 ]
+"124
 } 0
 "38 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\adc.c
 [v _adcRead adcRead `(i  1 e 2 0 ]
@@ -497,32 +497,77 @@ PIN_E7 39
 [v DesligarLed@num num `uc  1 a 1 0 ]
 "21
 } 0
-"97 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\main.c
+"95 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\main.c
 [v _LeTeclado LeTeclado `(v  1 e 1 0 ]
 {
-"111
+"109
 } 0
-"24
+"22
 [v _operate operate `(v  1 e 1 0 ]
 {
 [v operate@op op `uc  1 a 1 wreg ]
-"75
+"73
 [v operate@tempo tempo `i  1 a 2 49 ]
-"24
+"22
 [v operate@op op `uc  1 a 1 wreg ]
 [v operate@op op `uc  1 a 1 48 ]
-"95
+"93
 } 0
-"128
+"126
 [v _verifyGoal verifyGoal `(v  1 e 1 0 ]
 {
-"155
+"149
 [v verifyGoal@i i `i  1 a 2 27 ]
-"130
+"128
 [v verifyGoal@test test `i  1 a 2 31 ]
-"131
+"129
 [v verifyGoal@j j `i  1 a 2 29 ]
-"161
+"154
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 8 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
+"129
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 22 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 21 ]
+[v ___aldiv@counter counter `uc  1 a 1 20 ]
+"7
+[v ___aldiv@dividend dividend `l  1 p 4 12 ]
+[v ___aldiv@divisor divisor `l  1 p 4 16 ]
+"41
+} 0
+"15 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\led.c
+[v _LigarLed LigarLed `(v  1 e 1 0 ]
+{
+[v LigarLed@num num `uc  1 a 1 wreg ]
+[v LigarLed@num num `uc  1 a 1 wreg ]
+[v LigarLed@num num `uc  1 a 1 0 ]
+"17
+} 0
+"50 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\ssd.c
+[v _ssdUpdate ssdUpdate `(v  1 e 1 0 ]
+{
+"92
+} 0
+"34
+[v _ssdDigit ssdDigit `(v  1 e 1 0 ]
+{
+[v ssdDigit@val val `uc  1 a 1 wreg ]
+[v ssdDigit@val val `uc  1 a 1 wreg ]
+[v ssdDigit@pos pos `uc  1 p 1 36 ]
+[v ssdDigit@val val `uc  1 a 1 37 ]
+"48
 } 0
 "57 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\lcd.c
 [v _lcdString lcdString `(v  1 e 1 0 ]
@@ -537,9 +582,9 @@ PIN_E7 39
 [v _lcdNumber lcdNumber `(v  1 e 1 0 ]
 {
 "65
-[v lcdNumber@i i `i  1 a 2 16 ]
+[v lcdNumber@i i `i  1 a 2 28 ]
 "64
-[v lcdNumber@value value `i  1 p 2 14 ]
+[v lcdNumber@value value `i  1 p 2 26 ]
 "70
 } 0
 "52
@@ -591,62 +636,6 @@ PIN_E7 39
 [v pushByte@value value `uc  1 a 1 12 ]
 "39
 } 0
-"18
-[v _pulseEnablePin pulseEnablePin `(v  1 e 1 0 ]
-{
-"23
-} 0
-"5
-[v _delayMicro delayMicro `(v  1 e 1 0 ]
-{
-[v delayMicro@a a `i  1 p 2 0 ]
-"9
-} 0
-"10
-[v _delayMili delayMili `(v  1 e 1 0 ]
-{
-"11
-[v delayMili@i i `VEi  1 a 2 3 ]
-"10
-[v delayMili@a a `i  1 p 2 0 ]
-"16
-} 0
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
-[v ___lmul __lmul `(ul  1 e 4 0 ]
-{
-"17
-[v ___lmul@product product `ul  1 a 4 8 ]
-"15
-[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
-[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
-"129
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aldiv.c
-[v ___aldiv __aldiv `(l  1 e 4 0 ]
-{
-"10
-[v ___aldiv@quotient quotient `l  1 a 4 22 ]
-"11
-[v ___aldiv@sign sign `uc  1 a 1 21 ]
-[v ___aldiv@counter counter `uc  1 a 1 20 ]
-"7
-[v ___aldiv@dividend dividend `l  1 p 4 12 ]
-[v ___aldiv@divisor divisor `l  1 p 4 16 ]
-"41
-} 0
-"15 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\led.c
-[v _LigarLed LigarLed `(v  1 e 1 0 ]
-{
-[v LigarLed@num num `uc  1 a 1 wreg ]
-[v LigarLed@num num `uc  1 a 1 wreg ]
-[v LigarLed@num num `uc  1 a 1 0 ]
-"17
-} 0
-"50 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\ssd.c
-[v _ssdUpdate ssdUpdate `(v  1 e 1 0 ]
-{
-"92
-} 0
 "18 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\so.c
 [v _soWrite soWrite `(v  1 e 1 0 ]
 {
@@ -666,6 +655,11 @@ PIN_E7 39
 {
 "17
 } 0
+"18 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\lcd.c
+[v _pulseEnablePin pulseEnablePin `(v  1 e 1 0 ]
+{
+"23
+} 0
 "14 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\io.c
 [v _digitalWrite digitalWrite `(v  1 e 1 0 ]
 {
@@ -673,14 +667,20 @@ PIN_E7 39
 [v digitalWrite@value value `i  1 p 2 2 ]
 "38
 } 0
-"34 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\ssd.c
-[v _ssdDigit ssdDigit `(v  1 e 1 0 ]
+"5 C:\Users\tayna\Documents\UNIFEI\ECOP14\Projeto Final\pomodoro_timer.X\lcd.c
+[v _delayMicro delayMicro `(v  1 e 1 0 ]
 {
-[v ssdDigit@val val `uc  1 a 1 wreg ]
-[v ssdDigit@val val `uc  1 a 1 wreg ]
-[v ssdDigit@pos pos `uc  1 p 1 36 ]
-[v ssdDigit@val val `uc  1 a 1 37 ]
-"48
+[v delayMicro@a a `i  1 p 2 0 ]
+"9
+} 0
+"10
+[v _delayMili delayMili `(v  1 e 1 0 ]
+{
+"11
+[v delayMili@i i `VEi  1 a 2 3 ]
+"10
+[v delayMili@a a `i  1 p 2 0 ]
+"16
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\almod.c
 [v ___almod __almod `(l  1 e 4 0 ]
