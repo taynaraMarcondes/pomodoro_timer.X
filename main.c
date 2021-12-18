@@ -3,7 +3,6 @@
 #include "ssd.h"
 #include "adc.h"
 #include "led.h"
-#include "atraso.h"
 #include <pic18f4520.h>
 
 #define L_L1 0x80
@@ -210,8 +209,6 @@ void main(void)
     ConfiguraLed();
     adcInit();
 
-    //instructions();
-
     // inicializa��es
     for (;;)
     {
@@ -219,17 +216,13 @@ void main(void)
         {
         case 0:
             LeTeclado();
-            slot = 2;
+            slot = 1;
             break;
         case 1:
-            //Serial();
+            kpDebounce();
             slot = 2;
             break;
         case 2:
-            kpDebounce();
-            slot = 3;
-            break;
-        case 3:
             if (enable == 1)
             {
                 SetaMeta();
@@ -246,64 +239,4 @@ void main(void)
         ssdDigit((time / 60) % 10, 3);
         ssdUpdate();
     }
-}
-
-void instructions()
-{
-    lcdCommand(L_L1);
-    lcdString("Bem-vindo ao");
-    lcdCommand(L_L2);
-    lcdString("Pomodoro Timer!");
-    atraso_ms(3000);
-    lcdCommand(L_CLR);
-
-    lcdCommand(L_L1);
-    lcdString("Instrucoes:");
-    atraso_ms(2000);
-    lcdCommand(L_CLR);
-
-    lcdCommand(L_L1);
-    lcdString("Aperte 'U' para");
-    lcdCommand(L_L2);
-    lcdString("aumentar o tempo");
-    atraso_ms(3000);
-    lcdCommand(L_CLR);
-
-    lcdCommand(L_L1);
-    lcdString("Aperte 'D' para");
-    lcdCommand(L_L2);
-    lcdString("diminuir o tempo");
-    atraso_ms(3000);
-    lcdCommand(L_CLR);
-
-    lcdCommand(L_L1);
-    lcdString("Aperte 'S' para");
-    lcdCommand(L_L2);
-    lcdString("comecar o timer");
-    atraso_ms(3000);
-    lcdCommand(L_CLR);
-
-    lcdCommand(L_L1);
-    lcdString("Aperte 's' para");
-    lcdCommand(L_L2);
-    lcdString("pular para o");
-    atraso_ms(3000);
-    lcdCommand(L_CLR);
-
-    lcdCommand(L_L1);
-    lcdString("proximo intervalo");
-    atraso_ms(3000);
-    lcdCommand(L_CLR);
-
-    lcdCommand(L_L1);
-    lcdString("Digite 'G' para");
-    lcdCommand(L_L2);
-    lcdString("setar meta de");
-    atraso_ms(3000);
-    lcdCommand(L_CLR);
-
-    lcdCommand(L_L1);
-    lcdString("estudo em min");
-    atraso_ms(3000);
-    lcdCommand(L_CLR);
 }
